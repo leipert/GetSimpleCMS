@@ -68,6 +68,7 @@ if (isset($pagesArray[$id])) {
 
 $title         = $data_index->title;
 $date          = $data_index->pubDate;
+$creDate       = $data_index->creDate; //ADDED by leipert:  For simple access to creation date
 $metak         = $data_index->meta;
 $metad         = $data_index->metad;
 $url           = $data_index->url;
