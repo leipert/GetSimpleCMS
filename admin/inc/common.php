@@ -51,7 +51,7 @@ if (defined('GSADMIN')) {
  */
 define('GSADMINPATH', get_admin_path());
 define('GSADMININCPATH', GSADMINPATH. 'inc/');
-define('GSPLUGINPATH', GSROOTPATH. 'plugins/');
+define('GSPLUGINPATH', GSROOTPATH. 'vendor/leipert/GetSimplePlugins/');
 define('GSLANGPATH', GSADMINPATH. 'lang/');
 define('GSDATAPATH', GSROOTPATH. 'data/');
 define('GSDATAOTHERPATH', GSROOTPATH. 'data/other/');
@@ -59,7 +59,7 @@ define('GSDATAPAGESPATH', GSROOTPATH. 'data/pages/');
 define('GSDATAUPLOADPATH', GSROOTPATH. 'data/uploads/');
 define('GSTHUMBNAILPATH', GSROOTPATH. 'data/thumbs/');
 define('GSBACKUPSPATH', GSROOTPATH. 'backups/');
-define('GSTHEMESPATH', GSROOTPATH. 'theme/');
+define('GSTHEMESPATH', GSROOTPATH. 'vendor/leipert/GetSimpleThemes/');
 define('GSUSERSPATH', GSROOTPATH. 'data/users/');
 define('GSBACKUSERSPATH', GSROOTPATH. 'backups/users/');
 define('GSCACHEPATH', GSROOTPATH. 'data/cache/');

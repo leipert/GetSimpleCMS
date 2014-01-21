@@ -4,3 +4,5 @@
 *.sublime-*
 
 thumbs.db
+vendor
+composer.lock
