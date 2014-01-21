@@ -3,8 +3,9 @@
 /*
  * CSS php dynamic
  * DO NOT TIDY!
- * @uses color variables $primary0 - $primary6, $secondary_0-$secondary_1 	
+ * @uses color variables $primary0 - $primary6, $secondary_0-$secondary_1
  *
+ * //ADDED by leipert:  Adjusted general backend layout
  */
 
 /** GLOBAL RESETS **/
@@ -113,7 +114,6 @@ html {
 		background: -moz-linear-gradient(top, <?php echo $primary_4; ?> 0%, <?php echo $primary_2; ?> 100%);	/* firefox */
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,<?php echo $primary_4; ?>), color-stop(100%,<?php echo $primary_2; ?>));	/* webkit */
 		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='<?php echo $primary_4; ?>', endColorstr='<?php echo $primary_2; ?>',GradientType=0 );	/* ie */
-	margin: 0 0 25px 0;
 }
 
 .header .wrapper {
@@ -129,6 +129,7 @@ html {
 	bottom: 0px;
 	left: 0;
 	width: 960px;
+	margin-left: 1px;
 }
 
 .wrapper .nav li a {
@@ -188,14 +189,12 @@ html {
 #load .wrapper .nav li a.current,
 #loadtab .wrapper .nav li a.current {
 	color: <?php echo $primary_1; ?>;
-	background: #f6f6f6;
-		background: -moz-linear-gradient(top, #FFF 3%, #F6F6F6 100%);	/* firefox */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#FFF), color-stop(100%,#F6F6F6));	/* webkit */
+	background: #FFF;
 	font-weight: bold !important;
 	text-shadow: 1px 1px 0px rgba(255,244,255,.2);
-	box-shadow: rgba(0,0,0, 0.10) 2px -2px 2px;
-		-moz-box-shadow: rgba(0,0,0, 0.10) 2px -2px 2px;  
-		-webkit-box-shadow: rgba(0,0,0, 0.10) 2px -2px 2px;
+	box-shadow: rgba(255,255,255, 0.50) -2px 0px 0px;
+		-moz-box-shadow: rgba(255,255,255, 0.50) -2px 0px 0px;
+		-webkit-box-shadow: rgba(255,255,255, 0.50) -2px 0px 0px;
 }
 
 .wrapper .nav li a:active, 
@@ -304,7 +303,7 @@ html {
 	margin-right: auto;
 	width: 960px;
 	text-align: left;
-	padding-top: 1px;
+	padding-top: 0px;
 }
 
 .wrapper p {
@@ -438,6 +437,7 @@ h5:hover img {
 #sidebar {
 	width: 225px;
 	float: right;
+	margin-top: 3px;
 }
 
 #sidebar .section {
@@ -487,6 +487,7 @@ h5:hover img {
 }
 
 #sidebar .snav li a {
+	font-size:14px;
 	font-weight: bold;
 	display: block;
 	padding: 5px 15px 5px 15px;
@@ -499,7 +500,7 @@ h5:hover img {
 	margin-left: 13px;
 	color: <?php echo $primary_6; ?>;
 	background: <?php echo $primary_1; ?>;
-	text-shadow: 1px 1px 0px <?php echo $primary_0; ?>;
+	height:30px;
 	transition: all .2s ease-in-out;
 		-webkit-transition: all .2s ease-in-out;
 		-moz-transition: all .2s ease-in-out;
@@ -511,13 +512,11 @@ h5:hover img {
 	cursor: default;
 	color: #FFF;
 	background: <?php echo $secondary_1; ?> url('images/active.png') center left no-repeat !important;
-	text-shadow: 1px 1px 0px <?php echo $secondary_0; ?>;
 	padding-left: 28px;
 	border-radius: 0 3px 3px 0;
 }
 
 #sidebar .snav li a.current:hover {
-	text-shadow: 1px 1px 0px <?php echo $secondary_0; ?>;
 	margin-left: 0px;
 	cursor: default;
 	color: #FFF;
@@ -529,7 +528,6 @@ h5:hover img {
 	color: #FFF;
 	background: <?php echo $primary_0; ?>;
 	margin-left: 13px;
-	text-shadow: 1px 1px 0px rgba(0,0,0,.25);
 }
 
 #sidebar .snav li a em  {
@@ -615,7 +613,6 @@ h5:hover img {
 	color: #ccc;
 	font-weight: bold;
 	text-decoration: none;
-	text-shadow: 1px 1px 0px rgba(0,0,0,.2);
 	transition: all .10s ease-in-out;
 		-webkit-transition: all .10s ease-in-out;
 		-moz-transition: all .10s ease-in-out;
@@ -630,7 +627,6 @@ h5:hover img {
 	font-weight: bold;
 	text-decoration: none;
 	line-height: 14px !important;
-	text-shadow: 1px 1px 0px rgba(0,0,0,.2);
 }
 
 .edit-nav a:link em, 
@@ -681,7 +677,6 @@ h5:hover img {
 }
 
 .wrapper table.highlight {
-	text-shadow: 1px 1px 0 #fff;
 }
 
 .wrapper table.highlight tr:nth-child(odd) {
@@ -748,10 +743,11 @@ sup {
 	padding: 20px;
 	background: #fff;
 	border: 1px solid #c8c8c8;
+	border-top-width:0px;
 	margin: 0 0 30px 0;
-	box-shadow: rgba(0,0,0, 0.06) 0px 0px 4px;
-		-moz-box-shadow: rgba(0,0,0, 0.06) 0px 0px 4px;
-		-webkit-box-shadow: rgba(0,0,0, 0.06) 0px 0px 4px;
+	box-shadow: rgba(0,0,0, 0.5) 0px 0px 6px;
+		-moz-box-shadow: rgba(0,0,0, 0.5) 0px 0px 6px;
+		-webkit-box-shadow: rgba(0,0,0, 0.5) 0px 0px 6px;
 }
 
 #maincontent .main .section {
@@ -1248,7 +1244,7 @@ table.comptable tr td input.newtitle {
 }
 
 .updated p, .error p, .notify p {
-	margin: 0;
+	margin: 10px 0 0 0;
 	line-height: 22px;
 }
 
@@ -1317,7 +1313,9 @@ table.comptable tr td input.newtitle {
 
 .updated,
 #temp_good_flash {
+	font-weight:bold;
 	color: #308000;
+	margin-top:10 px;
 }
 
 .hint {
@@ -1561,6 +1559,7 @@ table.simple td.title {
 
 /* JQuery Uploadify Styles */
 .uploadifyQueueItem {
+	margin-top: 15px;
 	font-size: 10px;
 	padding: 8px 15px;
 	width: 190px;
