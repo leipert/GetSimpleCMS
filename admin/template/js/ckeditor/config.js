@@ -3,6 +3,18 @@ Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
+//ADDED by leipert:  Added Cityfield Styleset
+CKEDITOR.stylesSet.add( 'cf_styles',
+    [
+        {name: 'Big', element: 'big'},
+        {name: 'Small', element: 'small'},
+        {name: 'Computer Code', element: 'pre'},
+        {name: 'Deleted Text', element: 'del'},
+        {name: 'Inline Quotation', element: 'q'},
+        {name: 'Borderless Table', element: 'table', styles: {'border-style': 'hidden', 'background-color': '#E6E6FA'}},
+        {name: 'Square Bulleted List', element: 'ul', styles: {'list-style-type': 'square'}}
+    ]);
+
 CKEDITOR.editorConfig = function( config )
 {
 	// Define changes to default configuration here.
@@ -17,6 +29,8 @@ CKEDITOR.editorConfig = function( config )
 
 	config.toolbar_basic = 
 		[['Bold', 'Italic', 'Underline', 'NumberedList', 'BulletedList', 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock', 'Link', 'Unlink', 'Image', 'RemoveFormat', 'Source']];
+
+    config.stylesSet = 'cf_styles'; //ADDED by leipert: Make use of Cityfield Styleset
 
 };
 
