@@ -221,6 +221,40 @@ function get_page_date($i = "l, F jS, Y - g:i A", $echo=true) {
 }
 
 /**
+ * Get Page Creation Date
+ *
+ * This will return the page's creation timestamp
+ *
+ * @since 3.2.3c1
+ * @uses $creDate
+ * @uses $TIMEZONE
+ * @author leipert
+ *
+ * @param string $i Optional, default is "l, F jS, Y - g:i A"
+ * @param bool $echo Optional, default is true. False will 'return' value
+ * @return string Echos or returns based on param $echo
+ *
+ * //ADDED by leipert:  Added function
+ */
+function get_page_creDate($i = "l, F jS, Y - g:i A", $echo=true) {
+    global $creDate;
+    global $TIMEZONE;
+    if ($TIMEZONE != '') {
+        if (function_exists('date_default_timezone_set')) {
+            date_default_timezone_set($TIMEZONE);
+        }
+    }
+
+    $myVar = date($i, strtotime($creDate));
+
+    if ($echo) {
+        echo $myVar;
+    } else {
+        return $myVar;
+    }
+}
+
+/**
  * Get Page Full URL
  *
  * This will return the full url
