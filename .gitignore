@@ -7,4 +7,5 @@ thumbs.db
 vendor
 plugins
 theme
+admin
 composer.lock
