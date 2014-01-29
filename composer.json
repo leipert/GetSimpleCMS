@@ -7,9 +7,14 @@
         {
             "url": "git@bitbucket.org:/leipert/GetSimpleThemes",
             "type": "vcs"
+        },
+        {
+            "url": "https://github.com/leipert/installers",
+            "type": "vcs"
         }
     ],
     "require": {
+        "composer/installers": "dev-master",
         "leipert/GetSimplePlugins": "dev-master",
         "leipert/GetSimpleThemes": "dev-master"
     }
