@@ -15,12 +15,13 @@ include('inc/common.php');
 login_cookie_check();
 
 # verify a plugin was passed to this page
-if (!isset($_GET['id'])) {
+if (!isset($_GET['id']) && !isset($_GET['pluginId'])) { //ADDED by leipert:  Added possibility to load Plugin via "pluginId"
 	redirect('plugins.php');
 }
 
 # include the plugin
-$plugin_id = $_GET['id'];
+$plugin_id = (isset($_GET['pluginId']))?$_GET['pluginId']:$_GET['id']; //ADDED by leipert:  Added possibility to load Plugin via "pluginId"
+
 global $plugin_info;
 
 get_template('header', cl($SITENAME).' &raquo; '. $plugin_info[$plugin_id]['name']); 

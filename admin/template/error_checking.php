@@ -39,7 +39,9 @@
 		break;
 		case 'edit-success':
 			echo '<div class="updated"><p>';
-			if ($ptype == 'edit') { 
+            if(!isset($ptype)){$ptype = 'edit';} //ADDED by leipert:  If $ptype is not set
+            if(!isset($id)){$id = $_GET['id'];}
+			if ($ptype == 'edit') {
 				echo sprintf(i18n_r('ER_YOUR_CHANGES'), $id) .'. <a href="backup-edit.php?p=restore&id='. $id .'&nonce='.get_nonce("restore", "backup-edit.php").'">'.i18n_r('UNDO').'</a>';
 			} elseif ($ptype == 'restore') {
 				echo sprintf(i18n_r('ER_HASBEEN_REST'), $id);

@@ -295,14 +295,19 @@ function exec_action($a) {
  *
  * @param string $id ID of the link you are adding
  * @param string $txt Text to add to tabbed link
+ * @param string $action Text to add to tabbed link
+ * @param string $txt Text to add to tabbed link
+ * @param string $txt Text to add to tabbed link
+ * ADDED by leipert: Added possibililty to add SideMenu to specialpages
  */
 
-function createSideMenu($id, $txt, $action=null, $always=true){
-  $current = false;
-  if (isset($_GET['id']) && $_GET['id'] == $id && (!$action || isset($_GET[$action]))) {
-	$current = true;
-  }
-  if ($always || $current) {
+function createSideMenu($id, $txt, $action=null, $always=true, $specialId = null){
+    $setId=(isset($_GET['pluginId']))?@$_GET['pluginId']:@$_GET['id'];
+    $current = (!$action && $setId == $id )?true:( $specialId == @$_GET['special'] || !$specialId ) && array_reduce(explode('&',$action),function($p,$c){
+            $x = explode("=",$c);
+            return $p && isset($_GET[$x[0]]);
+        },true);
+  if ($always || $current || $specialId == @$_GET['special']) {
 	echo '<li id="sb_'.$id.'" class="plugin_sb"><a href="load.php?id='.$id.($action ? '&amp;'.$action : '').'" '.($current ? 'class="current"' : '').' >'.$txt.'</a></li>';
   }
 }
@@ -319,14 +324,15 @@ function createSideMenu($id, $txt, $action=null, $always=true){
  * @param string $txt Text to add to tabbed link
  * @param string $klass class to add to a element
  */
-function createNavTab($tabname, $id, $txt, $action=null) {
+function createNavTab($tabname, $id, $txt, $action=null, $specialId = null) {
   global $plugin_info;
   $current = false;
   if (basename($_SERVER['PHP_SELF']) == 'load.php') {
-	$plugin_id = @$_GET['id'];
+	$plugin_id = (isset($_GET['pluginId']))?@$_GET['pluginId']:@$_GET['id'];
 	if ($plugin_info[$plugin_id]['page_type'] == $tabname) $current = true;
+    if( $specialId != null && $specialId != @$_GET['special']) $current = false;
   }
-  echo '<li id="nav_'.$id.'" class="plugin_tab"><a href="load.php?id='.$id.($action ? '&amp;'.$action : '').'" '.($current ? 'class="current"' : '').' >'.$txt.'</a></li>';
+  echo '<li id="nav_'.$id.'" class="plugin_tab"><a href="load.php?pluginId='.$id.($action ? '&amp;'.$action : '').'" '.($current ? 'class="current"' : '').' >'.$txt.'</a></li>';
 }
 
 /**
