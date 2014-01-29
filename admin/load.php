@@ -14,15 +14,19 @@ $load['plugin'] = true;
 include('inc/common.php');
 login_cookie_check();
 
+global $plugin_info;
+
+if(isset($_GET['pluginId'])){
+	$_GET['id'] = $_GET['pluginId'];  //ADDED by leipert:  Added possibility to load Plugin via "pluginId"
+}
+
 # verify a plugin was passed to this page
-if (!isset($_GET['id']) && !isset($_GET['pluginId'])) { //ADDED by leipert:  Added possibility to load Plugin via "pluginId"
+if (empty($_GET['id']) || !isset($plugin_info[$_GET['id']])) {
 	redirect('plugins.php');
 }
 
 # include the plugin
-$plugin_id = (isset($_GET['pluginId']))?$_GET['pluginId']:$_GET['id']; //ADDED by leipert:  Added possibility to load Plugin via "pluginId"
-
-global $plugin_info;
+$plugin_id = $_GET['id'];
 
 get_template('header', cl($SITENAME).' &raquo; '. $plugin_info[$plugin_id]['name']); 
 
