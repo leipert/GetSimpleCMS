@@ -13,7 +13,7 @@ if (basename($_SERVER['PHP_SELF']) == 'gsconfig.php') {
 }; 
 
 /*****************************************************************************/
-/** Below are constants that you can use to customize how GetSimple operates */ 
+/** Below are constants that you can use to customize how GetSimple operates */
 
 # Extra salt to secure your password with. Default is empty for backwards compatibility.
 #define('GSLOGINSALT', 'your_unique_phrase');
@@ -111,5 +111,16 @@ define('GSDONOTPING', 1);
 # Set default language for missing lang token merge, 
 # accepts a lang string, default is 'en_US', false to disable
 # define('GSMERGELANG',false);
+
+////ADDED by leipert: Standard settings for Cityfield
+define('I18N_SINGLE_LANGUAGE',true);
+define('GSEDITORTOOL',"['Undo','Redo',
+'Bold', 'Italic', 'Underline', 'TextColor', 'BGColor', 'JustifyLeft','JustifyCenter','JustifyRight',
+'JustifyBlock',  'NumberedList', 'BulletedList', 'Table', 'Link', 'Unlink', 'Image', 'RemoveFormat', 'Source'],
+'/',
+['Styles','Format']");
+define('GSEDITOROPTIONS', "emailProtection : 'encode'");
+define('GSSTYLE',implode(',',array(GSSTYLEWIDE,GSSTYLE_SBFIXED)));
+define('GSDONOTPING', 1);
 
 ?>

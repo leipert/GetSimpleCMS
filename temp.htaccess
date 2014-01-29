@@ -19,6 +19,11 @@ RewriteEngine on
 # replace it with your subdirectory path
 RewriteBase **REPLACE**
 
+#RewriteRule ^/?$ en/ [R,L]   # optional
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule /?([A-Za-z0-9_-]+)/?$ index.php?id=$1 [QSA,L]
+RewriteRule ^([a-z][a-z])/(.*?/)?([A-Za-z0-9-]+)/?$ index.php?id=$3&lang=$1 [QSA,L]
+RewriteRule ^([a-z][a-z])/?$ index.php?lang=$1 [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule /?([A-Za-z0-9-]+)/?$ index.php?id=$1 [QSA,L]
