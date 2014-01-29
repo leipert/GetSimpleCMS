@@ -204,6 +204,7 @@ function create_pluginsxml($force=false){
 	  $phpfiles[] = $fi;
 	}
   }
+	rsort($phpfiles);
   if (!$force) {
 	$livekeys = array_keys($live_plugins);
 	if (count(array_diff($livekeys, $phpfiles))>0 || count(array_diff($phpfiles, $livekeys))>0) {
@@ -309,13 +310,12 @@ function exec_action($a) {
  */
 
 function createSideMenu($id, $txt, $action=null, $always=true, $specialId = null){
-    $setId=(isset($_GET['pluginId']))?@$_GET['pluginId']:@$_GET['id'];
-    $current = (!$action && $setId == $id )?true:( $specialId == @$_GET['special'] || !$specialId ) && array_reduce(explode('&',$action),function($p,$c){
+    $current = (!$action && @$_GET['pluginId'] == $id )?true:( $specialId == @$_GET['special'] || !$specialId ) && array_reduce(explode('&',$action),function($p,$c){
             $x = explode("=",$c);
             return $p && isset($_GET[$x[0]]);
         },true);
   if ($always || $current || $specialId == @$_GET['special']) {
-	echo '<li id="sb_'.$id.'" class="plugin_sb"><a href="load.php?id='.$id.($action ? '&amp;'.$action : '').'" '.($current ? 'class="current"' : '').' >'.$txt.'</a></li>';
+	echo '<li id="sb_'.$id.'" class="plugin_sb"><a href="load.php?pluginId='.$id.($action ? '&amp;'.$action : '').'" '.($current ? 'class="current"' : '').' >'.$txt.'</a></li>';
   }
 }
 
@@ -335,7 +335,7 @@ function createNavTab($tabname, $id, $txt, $action=null, $specialId = null) {
   global $plugin_info;
   $current = false;
   if (basename($_SERVER['PHP_SELF']) == 'load.php') {
-	$plugin_id = (isset($_GET['pluginId']))?@$_GET['pluginId']:@$_GET['id'];
+	$plugin_id = @$_GET['pluginId'];
 	if ($plugin_info[$plugin_id]['page_type'] == $tabname) $current = true;
     if( $specialId != null && $specialId != @$_GET['special']) $current = false;
   }

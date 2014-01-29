@@ -16,17 +16,13 @@ login_cookie_check();
 
 global $plugin_info;
 
-if(isset($_GET['pluginId'])){
-	$_GET['id'] = $_GET['pluginId'];  //ADDED by leipert:  Added possibility to load Plugin via "pluginId"
-}
-
 # verify a plugin was passed to this page
-if (empty($_GET['id']) || !isset($plugin_info[$_GET['id']])) {
+if (empty($_GET['pluginId']) || !isset($plugin_info[$_GET['pluginId']])) { //ADDED by leipert:  Changed to pluginid
 	redirect('plugins.php');
 }
 
 # include the plugin
-$plugin_id = $_GET['id'];
+$plugin_id = $_GET['pluginId']; //ADDED by leipert:  Changed to pluginid
 
 get_template('header', cl($SITENAME).' &raquo; '. $plugin_info[$plugin_id]['name']); 
 
