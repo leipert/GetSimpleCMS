@@ -113,14 +113,17 @@ define('GSDONOTPING', 1);
 # define('GSMERGELANG',false);
 
 ////ADDED by leipert: Standard settings for Cityfield
+
 define('I18N_SINGLE_LANGUAGE',true);
+
 define('GSEDITORTOOL',"['Undo','Redo',
 'Bold', 'Italic', 'Underline', 'TextColor', 'BGColor', 'JustifyLeft','JustifyCenter','JustifyRight',
 'JustifyBlock',  'NumberedList', 'BulletedList', 'Table', 'Link', 'Unlink', 'Image', 'RemoveFormat', 'Source'],
 '/',
 ['Styles','Format']");
+
 define('GSEDITOROPTIONS', "emailProtection : 'encode'");
-define('GSSTYLE',implode(',',array(GSSTYLEWIDE,GSSTYLE_SBFIXED)));
-define('GSDONOTPING', 1);
+
+define('GSSTYLE',GSSTYLE_SBFIXED);
 
 ?>
