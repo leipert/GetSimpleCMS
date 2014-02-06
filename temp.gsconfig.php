@@ -116,11 +116,16 @@ define('GSDONOTPING', 1);
 
 define('I18N_SINGLE_LANGUAGE',true);
 
-define('GSEDITORTOOL',"['Undo','Redo',
-'Bold', 'Italic', 'Underline', 'TextColor', 'BGColor', 'JustifyLeft','JustifyCenter','JustifyRight',
-'JustifyBlock',  'NumberedList', 'BulletedList', 'Table', 'Link', 'Unlink', 'Image', 'RemoveFormat', 'Source'],
+define('GSEDITORTOOL',"
+[
+{ name: 'first row',
+items:['Undo','Redo','Bold', 'Italic', 'Underline', 'TextColor', 'BGColor', 'JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock',
+  'NumberedList', 'BulletedList', 'Table', 'Link', 'Unlink', 'Image', 'RemoveFormat', 'Source']},
 '/',
-['Styles','Format']");
+{name: 'second row', items:['Styles','Format']}
+]
+");
+
 
 define('GSEDITOROPTIONS', "emailProtection : 'encode'");
 
