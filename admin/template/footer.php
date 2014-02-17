@@ -16,7 +16,7 @@
       		if(!isAuthPage()){ ?>
 	      		<p>
 					<a href="http://cityfield.de/" target="_blank" >
-						<img src="template/images/cityfield_logo.jpg" alt="Cityfield Content Management System" />
+						<img src="template/images/logo_footer.png" alt="Cityfield Content Management System" />
 					</a><br>
 					&copy; 2013-<?php echo date('Y'); ?> <a href="http://cityfield.de/" target="_blank" >Cityfield CMS</a>
 					<?php echo '&ndash;'. i18n_r('VERSION') .' '. $site_version_no;  ?>
