@@ -264,7 +264,7 @@ li.cke_panel_listItem
 }
 .cke_panel_listItem a:hover,.cke_panel_listItem a:focus,.cke_panel_listItem a:active
 {
-	background-color: #e0e0e0;
+	background-color: ##e0e0e0;
 	border-color: #aaa;
 }
 .cke_hc .cke_panel_listItem.cke_selected a,.cke_hc .cke_panel_listItem a:hover,.cke_hc .cke_panel_listItem a:focus,.cke_hc .cke_panel_listItem a:active
@@ -905,7 +905,7 @@ background:#cccccc;
 	opacity: .90;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	width: 140px;
+	width: 60px;
 }
 .cke_skin_getsimple .cke_rtl .cke_rcombo .cke_text
 {
