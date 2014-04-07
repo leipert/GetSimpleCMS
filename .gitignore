@@ -32,3 +32,4 @@ data/thumbs/*
 data/uploads/*
 !data/uploads/.htaccess
 
+favicon.ico
