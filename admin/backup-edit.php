@@ -130,7 +130,7 @@ get_template('header', cl($SITENAME).' &raquo; '. i18n_r('BAK_MANAGEMENT').' &ra
 		<script type="text/javascript" src="template/js/ckeditor/ckeditor.js"></script>
 		<script type="text/javascript">
 		var editor = CKEDITOR.replace( 'codetext', {
-			skin : 'getsimple',
+			skin : 'getsimple',enterMode : CKEDITOR.ENTER_BR, shiftEnterMode: CKEDITOR.ENTER_P,
 			language : '<?php echo $EDLANG; ?>',
 			defaultLanguage : '<?php echo $EDLANG; ?>',
 			<?php if (file_exists(GSTHEMESPATH .$TEMPLATE."/editor.css")) { 

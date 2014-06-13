@@ -312,7 +312,7 @@ get_template('header', cl($SITENAME).' &raquo; '.i18n_r('EDIT').' '.$title);
 			<script type="text/javascript">
 			
 			var editor = CKEDITOR.replace( 'post-content', {
-					skin : 'getsimple',
+					skin : 'getsimple',enterMode : CKEDITOR.ENTER_BR, shiftEnterMode: CKEDITOR.ENTER_P,
 					forcePasteAsPlainText : true,
 					language : '<?php echo $EDLANG; ?>',
 					defaultLanguage : 'en',
